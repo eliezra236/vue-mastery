@@ -5,8 +5,7 @@ app.component('product-display', {
       required: true
     }
   },
-  template: 
-  /*html*/
+  template:
   `<div class="product-display">
     <div class="product-container">
       <div class="product-image">
@@ -56,7 +55,7 @@ app.component('product-display', {
   },
   methods: {
       addToCart() {
-          this.cart += 1
+          this.$emit('add-to-cart', this.variants[this.selectedVariant].id);
       },
       updateVariant(index) {
           this.selectedVariant = index
